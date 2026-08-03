@@ -1,0 +1,3 @@
+# Default thresholds for compliance rules
+min_clear_width_mm: 850   # IBC 2021 1010.1.1 813 mm + slight buffer
+max_travel_distance_m: 45 # Common value for unsprinklered buildings

@@ -1,0 +1,92 @@
+{
+  "name": "Sample Office Floor",
+  "spaces": [
+    {
+      "id": "S1",
+      "name": "Office 101",
+      "occupancy_type": "office",
+      "area_m2": 25.0,
+      "centroid": {"x": 2.0, "y": 4.0},
+      "width_m": 5.0,
+      "depth_m": 5.0,
+      "is_exit": false
+    },
+    {
+      "id": "S2",
+      "name": "Corridor",
+      "occupancy_type": "corridor",
+      "area_m2": 12.0,
+      "centroid": {"x": 5.5, "y": 4.0},
+      "width_m": 2.5,
+      "depth_m": 5.0,
+      "is_exit": false
+    },
+    {
+      "id": "S3",
+      "name": "Office 102",
+      "occupancy_type": "office",
+      "area_m2": 20.0,
+      "centroid": {"x": 2.0, "y": 1.0},
+      "width_m": 4.0,
+      "depth_m": 5.0,
+      "is_exit": false
+    },
+    {
+      "id": "S4",
+      "name": "Stair A",
+      "occupancy_type": "stair",
+      "area_m2": 8.0,
+      "centroid": {"x": 9.0, "y": 4.0},
+      "width_m": 3.0,
+      "depth_m": 3.0,
+      "is_exit": true
+    },
+    {
+      "id": "S5",
+      "name": "Exit Lobby",
+      "occupancy_type": "lobby",
+      "area_m2": 10.0,
+      "centroid": {"x": 9.0, "y": 1.0},
+      "width_m": 3.5,
+      "depth_m": 3.0,
+      "is_exit": false
+    }
+  ],
+  "doors": [
+    {
+      "id": "D1",
+      "name": "Office 101 Door",
+      "width_mm": 900,
+      "connects": ["S1", "S2"],
+      "is_designated_exit": false
+    },
+    {
+      "id": "D2",
+      "name": "Office 102 Door",
+      "width_mm": 850,
+      "connects": ["S3", "S2"],
+      "is_designated_exit": false
+    },
+    {
+      "id": "D3",
+      "name": "Corridor to Stair",
+      "width_mm": 800,
+      "connects": ["S2", "S4"],
+      "is_designated_exit": true
+    },
+    {
+      "id": "D4",
+      "name": "Exit Lobby Door",
+      "width_mm": 750,
+      "connects": ["S5", "EXTERIOR"],
+      "is_designated_exit": true
+    },
+    {
+      "id": "D5",
+      "name": "Stair to Lobby",
+      "width_mm": 850,
+      "connects": ["S4", "S5"],
+      "is_designated_exit": true
+    }
+  ]
+}
