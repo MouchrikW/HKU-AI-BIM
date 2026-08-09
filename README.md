@@ -1,21 +1,18 @@
-# BIM Compliance Micro-Prototype
+# BIM Egress Compliance Checker
 
-A web‑based tool for automated fire egress compliance checking of architectural models, built as a technical test for HKU AI+BIM team.
+A micro‑prototype for the HKU AI+BIM technical test. Checks two fire‑egress rules:
 
-## Features
+1. **Egress door width** – flags exit doors narrower than a configurable minimum (default 850 mm).
+2. **Travel distance to nearest exit** – graph‑based shortest path over actual door connectivity (default max 45 m). Unreachable spaces are flagged as `critical`.
 
-- **Two rules**:
-  1. Minimum clear width of designated egress doors (default ≥850 mm)
-  2. Maximum travel distance from any occupied space to the nearest exit (default ≤45 m)
-- **Input formats**:
-  - Simplified JSON (recommended, no external dependencies)
-  - IFC (via `ifcopenshell`, requires sidecar adjacency file for travel distance)
-- **Interactive web interface** built with Streamlit
-- **Visual egress diagram** highlighting violations
+## Installation
 
-## Setup
+git clone https://github.com/MouchrikW/HKU-AI-BIM.git
+cd HKU-AI-BIM
+python -m venv venv
+# Windows: venv\Scripts\activate  |  macOS/Linux: source venv/bin/activate
+pip install -r requirements.txt
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+Run:
+
+streamlit run app.py
