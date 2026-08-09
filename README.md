@@ -19,3 +19,30 @@ A web‑based tool for automated fire egress compliance checking of architectura
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   
+## Run:
+  streamlit run app.py
+
+## Usage:
+
+Upload a JSON or IFC file.
+
+Adjust thresholds in the sidebar.
+
+View violations and the connectivity diagram.
+
+Download a JSON report.
+
+## Sample data:
+
+data/sample_building_pass.json – all rules pass.
+
+data/sample_building_fail.json – contains violations.
+
+## Design choices:
+
+Adapter pattern – decouples JSON/IFC input from rule logic.
+
+Graph‑based travel distance – more realistic than Euclidean, catches unreachable spaces.
+
+All thresholds are configurable in data/config.yaml and the UI
